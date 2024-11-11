@@ -1,0 +1,10 @@
+{{ users | json}}
+<table style="border: 1px solid;">
+  <th>Id</th>
+  <th>Name</th>
+  <tr *ngFor="let user of users">
+   <td>{{user.id}}</td>
+   <td>{{user.userName}}</td>
+  </tr>
+</table>
+<router-outlet />
