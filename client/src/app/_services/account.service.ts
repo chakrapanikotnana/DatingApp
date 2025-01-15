@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { User } from '../_models/user';
 import { map } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AccountService {
   //http=inject(HttpClient);  Angular 16 or more
-  baseUrl = 'http://localhost:5000/api/';
+  baseUrl = environment.apiUrl;
   constructor(private http: HttpClient) {}
   CurrentUser = signal<User | null>(null);
 
